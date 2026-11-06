@@ -244,3 +244,7 @@
 
 /* a fact not given yet: a text slot */
 .fill { padding: 0 var(--space-2xs); border: var(--rule-hair) dashed var(--color-muted); border-radius: var(--radius-chip); color: var(--color-muted); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.shot--land { aspect-ratio: 16 / 10; }
+.shots--even { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.shot--phone { aspect-ratio: 9 / 16; max-width: 22rem; }
+@media (max-width: 60rem) { .shots--even { grid-template-columns: minmax(0, 1fr); } }
