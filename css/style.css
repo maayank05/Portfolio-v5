@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DESIGN TOKENS — neumorphism, black/white/grey base, gold signature accent.
+   DESIGN TOKENS — neumorphism, black/white/grey only.
    One base surface color throughout; depth comes from paired light/dark
    shadows, not borders or fills. Text stays high-contrast on purpose —
    only container edges get the soft treatment.
@@ -183,9 +183,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.02em; line-height:
   border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 500;
   transition: all var(--dur) var(--ease); white-space: nowrap; border: 1px solid var(--edge);
 }
-.btn-primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; box-shadow: 10px 10px 24px var(--shadow-d), -6px -6px 18px var(--accent-shadow-l); }
-.btn-primary:hover { box-shadow: 14px 14px 30px var(--shadow-d-strong), -8px -8px 22px var(--accent-shadow-l); transform: translateY(-2px); }
-.btn-primary:active { box-shadow: inset 4px 4px 8px rgba(0,0,0,0.35); transform: translateY(0); }
+.btn-primary { color: var(--ink); box-shadow: 6px 6px 13px var(--shadow-d), -6px -6px 13px var(--shadow-l); }
+.btn-primary:hover { box-shadow: 8px 8px 16px var(--shadow-d-strong), -8px -8px 16px var(--shadow-l-strong); transform: translateY(-2px); }
+.btn-primary:active { box-shadow: inset 4px 4px 8px var(--shadow-d), inset -4px -4px 8px var(--shadow-l); transform: translateY(0); }
 .btn-secondary { color: var(--ink-muted); box-shadow: 6px 6px 13px var(--shadow-d), -6px -6px 13px var(--shadow-l); }
 .btn-secondary:hover { color: var(--ink); box-shadow: 8px 8px 16px var(--shadow-d-strong), -8px -8px 16px var(--shadow-l-strong); transform: translateY(-2px); }
 .btn-secondary:active { box-shadow: inset 4px 4px 8px var(--shadow-d), inset -4px -4px 8px var(--shadow-l); transform: translateY(0); }
@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.02em; line-height:
 .fact { display: flex; align-items: center; gap: var(--sp-3); font-size: 0.88rem; color: var(--ink-muted); }
 .fact svg { color: var(--ink-faint); flex-shrink: 0; }
 .avatar-wrap { display: flex; justify-content: center; }
-.avatar { width: 168px; height: 168px; border-radius: var(--radius-lg); object-fit: cover; box-shadow: 8px 8px 18px var(--shadow-d), -8px -8px 18px var(--shadow-l); border: 1px solid var(--edge); }
+.avatar { width: 168px; height: 168px; border-radius: var(--radius-lg); object-fit: cover; box-shadow: 10px 10px 24px var(--shadow-d), -10px -10px 24px var(--shadow-l); border: 1px solid var(--edge); }
 @media (max-width: 768px) {
   .intro { grid-template-columns: 1fr; }
   .avatar-wrap { order: -1; }
@@ -286,8 +286,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.02em; line-height:
 .project-impact li { font-size: 0.85rem; padding-left: var(--sp-4); position: relative; color: var(--ink-muted); }
 .project-impact li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 6px; height: 1px; background: var(--ink-faint); }
 .project-tools { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-5); padding-top: var(--sp-4); border-top: 1px solid var(--edge); }
-.project-featured { position: relative; }
-.project-featured-badge { position: absolute; top: -10px; right: var(--sp-5); background: var(--accent); color: var(--accent-ink); font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.25rem 0.65rem; border-radius: 999px; font-weight: 600; }
 
 .dash-card { overflow: hidden; display: flex; flex-direction: column; }
 .dash-chart-wrap { padding: var(--sp-4) var(--sp-4) 0; }
@@ -322,11 +320,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.02em; line-height:
 .cert-row { display: flex; align-items: center; justify-content: space-between; padding: var(--sp-4) 0; border-bottom: 1px solid var(--edge); gap: var(--sp-3); }
 .cert-row:last-child { border-bottom: none; }
 .cert-left { display: flex; align-items: center; gap: var(--sp-3); font-size: 0.92rem; }
-.cert-left svg { color: var(--accent); flex-shrink: 0; }
+.cert-left svg { color: var(--ink-faint); flex-shrink: 0; }
 .cert-issuer { font-size: 0.78rem; color: var(--ink-faint); font-family: var(--font-mono); white-space: nowrap; }
 .certs-side { display: flex; flex-direction: column; gap: var(--sp-5); }
 .achievement-card, .impact-card { padding: var(--sp-5); }
-.achievement-card + .achievement-card { margin-top: calc(-1 * var(--sp-2)); }
 .trophy-icon { color: var(--accent); margin-bottom: var(--sp-4); }
 .achievement-title { font-size: 1rem; }
 .achievement-detail { font-size: 0.85rem; color: var(--ink-muted); margin-top: var(--sp-2); line-height: 1.55; }
@@ -361,7 +358,7 @@ a.info-row:hover { color: var(--accent); }
 .error-msg { font-size: 0.82rem; color: var(--error); }
 .hint { font-size: 0.75rem; color: var(--ink-faint); }
 .sent { padding: var(--sp-7) var(--sp-5); text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--sp-3); }
-.sent svg { color: var(--accent); }
+.sent svg { color: var(--ink); }
 .sent p { color: var(--ink-muted); font-size: 0.9rem; }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .form-row2 { grid-template-columns: 1fr; } }

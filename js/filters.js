@@ -1,3 +1,5 @@
+// Generic filter-tab behavior for Projects and Dashboards pages.
+// Cards must have a data-category attribute; filter buttons a data-filter attribute.
 document.addEventListener("DOMContentLoaded", function () {
   var filterBar = document.querySelector("[data-filter-bar]");
   if (!filterBar) return;

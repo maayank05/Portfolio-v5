@@ -1,3 +1,6 @@
+// Sign up free at https://formspree.io, create a form, and paste the ID below
+// (the part after "https://formspree.io/f/"). Until then, the form falls back
+// to opening the visitor's email client with the message pre-filled.
 var FORMSPREE_ID = "YOUR_FORM_ID";
 var CONTACT_EMAIL = "mayankpugalia06@gmail.com";
 

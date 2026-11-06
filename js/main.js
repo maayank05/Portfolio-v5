@@ -1,3 +1,4 @@
+// Mobile nav drawer toggle
 document.addEventListener("DOMContentLoaded", function () {
   var menuToggle = document.getElementById("menuToggle");
   var sidebar = document.getElementById("sidebar");
@@ -17,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (menuToggle && sidebar && scrim) {
     menuToggle.addEventListener("click", function () {
-      if (sidebar.classList.contains("open")) closeMenu();
+      var isOpen = sidebar.classList.contains("open");
+      if (isOpen) closeMenu();
       else openMenu();
     });
     scrim.addEventListener("click", closeMenu);
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Highlight the current page in the sidebar nav
   var currentFile = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".nav-link").forEach(function (link) {
     var linkFile = link.getAttribute("href").split("/").pop();

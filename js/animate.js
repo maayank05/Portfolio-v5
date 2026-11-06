@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Scroll reveal
   var revealEls = document.querySelectorAll(".reveal");
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach(function (el) { el.classList.add("in-view"); });
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     revealEls.forEach(function (el) { revealObserver.observe(el); });
   }
 
+  // KPI count-up
   var counters = document.querySelectorAll("[data-count-to]");
   if (counters.length === 0) return;
 
@@ -30,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!match) return;
     var target = parseInt(match[1], 10);
     var suffix = match[2] || "";
+    var start = 0;
     var duration = 900;
     var startTime = null;
 
@@ -37,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!startTime) startTime = ts;
       var progress = Math.min((ts - startTime) / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
-      var current = Math.round(target * eased);
+      var current = Math.round(start + (target - start) * eased);
       el.textContent = current + suffix;
       if (progress < 1) {
         requestAnimationFrame(step);
