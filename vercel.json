@@ -1,0 +1,12 @@
+{
+  "cleanUrls": false,
+  "redirects": [
+    { "source": "/about.html", "destination": "/#work", "permanent": true },
+    { "source": "/experience.html", "destination": "/#experience", "permanent": true },
+    { "source": "/skills.html", "destination": "/#skills", "permanent": true },
+    { "source": "/certifications.html", "destination": "/#skills", "permanent": true },
+    { "source": "/contact.html", "destination": "/#contact", "permanent": true },
+    { "source": "/projects.html", "destination": "/#work", "permanent": true },
+    { "source": "/dashboards.html", "destination": "/#work", "permanent": true }
+  ]
+}

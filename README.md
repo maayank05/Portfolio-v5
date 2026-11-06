@@ -1,82 +1,35 @@
-# Mayank Pugalia — Portfolio (Plain HTML/CSS/JS version)
+# Mayank Pugalia, portfolio
 
-Same design, same content, same everything as the Next.js version — just built with
-plain HTML, CSS, and vanilla JavaScript instead. No npm, no build step, no framework.
-You can open `index.html` directly in a browser right now and see the whole site.
+Static HTML, CSS and a few lines of JavaScript. No build step. Hosted on Vercel from the `main` branch.
 
-## View it locally
+Design: the Hallmark "Console" theme (graphite, one amber accent), built and checked with the Hallmark design skill.
 
-Just double-click `index.html`. That's it — no install, no server, no terminal.
+## Files
 
-(The contact form's "send in-page" option needs a real http:// address to work, since
-browsers block that kind of request from a local file. Until you deploy it somewhere,
-the form falls back to opening your email client instead — which works fine either way.)
-
-## Deploy it (free, ~2 minutes — even easier than the Next.js version)
-
-**Netlify (drag and drop, no account setup beyond signing in):**
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
-2. Drag this whole folder onto the page
-3. Done — live URL immediately
-
-**GitHub Pages:**
-1. Create a new GitHub repo, push this folder's contents to it
-2. Repo Settings → Pages → set source to the `main` branch, root folder
-3. Done — live at `yourusername.github.io/reponame`
-
-**Vercel:** same drag-and-drop idea as Netlify, via [vercel.com/new](https://vercel.com/new).
-
-There is no build command to configure anywhere — if a host asks for one, leave it blank.
-
-## Editing content
-
-Everything is plain HTML now, so there's no data file to edit — open the relevant
-`.html` file in any text editor and change the text directly. Every page repeats the
-same sidebar/footer markup (that's normal for a framework-free static site); if you
-change something in the nav (e.g. your name, a link), you'll need to update it in each
-`.html` file, or ask me to regenerate them for you from one edit.
-
-| File | Page |
+| File | What it is |
 |---|---|
-| `index.html` | Home |
-| `about.html` | About |
-| `experience.html` | Experience |
-| `projects.html` | Projects |
-| `dashboards.html` | Dashboards |
-| `skills.html` | Skills |
-| `certifications.html` | Certifications |
-| `blog.html` | Blog list |
-| `blog/welcome-to-my-blog.html` | The one blog post so far |
-| `contact.html` | Contact |
-| `css/style.css` | All styling, one file |
-| `js/main.js` | Mobile menu + active nav highlight |
-| `js/filters.js` | Project/Dashboard filter tabs |
-| `js/contact.js` | Contact form (mailto fallback + optional Formspree) |
+| `index.html` | Home: projects index, what I do, about, MERIDIAN, experience, skills, certifications, contact |
+| `projects/*.html` | Case pages: MERIDIAN, Enterprise FP&A, CRM Arena, Incentive compensation |
+| `blog.html`, `blog/*.html` | Blog index and posts (`blog/TEMPLATE.html` is the starting point for a new post) |
+| `404.html` | Not-found page |
+| `css/tokens.css`, `css/base.css` | Hallmark theme tokens and base rules (generated, don't edit by hand) |
+| `css/site.css` | All page styles |
+| `js/site.js` | Closes the mobile menu |
+| `assets/resume.pdf` | The downloadable resume |
+| `assets/meridian/*.png` | Real screenshots from the MERIDIAN repository |
+| `vercel.json` | Redirects the old pages (about, experience, skills, etc.) to the home page sections |
 
 ## Adding a blog post
 
-1. Duplicate `blog/TEMPLATE.html`, rename it (e.g. `blog/my-new-post.html`).
-2. Edit the date, title, tags, and body text inside it — it's just HTML, so
-   `<p>`, `<h2>`, `<strong>`, `<a href="...">` etc. all work.
-3. Open `blog.html` and add one more `<a class="card post-card">` block (copy the
-   existing one for `welcome-to-my-blog.html` and point it at your new file).
-4. Redeploy (or just re-drag the folder to Netlify).
+1. Copy `blog/TEMPLATE.html` to `blog/your-post.html` and fill in the date, title, description and paragraphs.
+2. Add one `<li>` to the list in `blog.html`, copying the existing one.
 
-## Turning on the contact form's "send in-page" option
+## Content rules
 
-Right now, submitting the form opens the visitor's email client instead of sending
-directly. To make it send in-page: sign up free at [formspree.io](https://formspree.io),
-create a form, and paste your form ID into `FORMSPREE_ID` near the top of `js/contact.js`.
+No invented metrics, testimonials or links. Client names stay out (sector labels only). Project results are described qualitatively unless verified.
 
-## What's different from the Next.js version
+## Checking a change
 
-- Neumorphic black/white/grey design — soft extruded shadows instead of flat borders,
-  pressed/inset states on inputs and active nav — same content and structure as before.
-- No data files — content lives directly in each HTML page.
-- Charts are hand-built SVG instead of a charting library — same look, zero dependencies.
-- Blog posts are individual HTML files instead of Markdown — simpler to host, a little
-  more manual to add.
-- Project cards use a Problem → Process → Outcome structure.
-- KPI numbers count up and sections fade in on scroll (`js/animate.js`), respecting
-  `prefers-reduced-motion`.
-- Nothing to install, ever. Open the folder, open `index.html`, done.
+```
+node ~/.claude/skills/hallmark/scripts/sloplint.mjs index.html projects/*.html --genre modern-minimal --render
+```

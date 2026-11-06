@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MERIDIAN, analytics platform case study, Mayank Pugalia</title>
+<meta name="description" content="MERIDIAN turns the public Olist e-commerce dataset into a tested MySQL model, reconciled KPIs, a FastAPI backend and a React dashboard.">
+<link rel="canonical" href="https://portfolio-v5-flame-tau.vercel.app/projects/meridian.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MERIDIAN, analytics platform case study, Mayank Pugalia">
+<meta property="og:description" content="MERIDIAN turns the public Olist e-commerce dataset into a tested MySQL model, reconciled KPIs, a FastAPI backend and a React dashboard.">
+<meta property="og:url" content="https://portfolio-v5-flame-tau.vercel.app/projects/meridian.html">
+<meta property="og:image" content="https://portfolio-v5-flame-tau.vercel.app/assets/meridian/overview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="slab">
+  <nav class="container slab__in" aria-label="Main">
+    <a class="wordmark" href="../index.html" aria-label="Mayank Pugalia, home">Mayank Pugalia</a>
+    <ul class="slab__links">
+      <li><a href="../index.html#work" aria-current="page">Work</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a class="btn btn--small" href="mailto:mayankpugalia06@gmail.com">Email me</a></li>
+    </ul>
+    <details class="slab__menu">
+      <summary class="btn btn--small">Menu</summary>
+      <ul>
+      <li><a href="../index.html#work" aria-current="page">Work</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="mailto:mayankpugalia06@gmail.com">Email me</a></li>
+      </ul>
+    </details>
+  </nav>
+</header>
+
+<main id="main" class="container">
+<p class="crumb"><a class="link" href="../index.html#work">All work</a></p>
+<header class="doc-head">
+  <div class="doc-head__text">
+    <h1>MERIDIAN</h1>
+    <p class="lead">An analytics platform for a simulated retailer, built on 100k public orders.</p>
+  </div>
+  <dl class="facts"><div><dt>My role</dt><dd>Requirements, KPI rules and acceptance</dd></div><div><dt>Period</dt><dd><span class="measured">2026</span></dd></div><div><dt>Status</dt><dd><span class="chip chip--ok">Complete, runs locally</span></dd></div><div><dt>Code</dt><dd><a class="link" href="https://github.com/maayank05/meridian" rel="noopener" target="_blank">maayank05/meridian</a></dd></div></dl>
+</header><section class="part" aria-labelledby="m-problem">
+  <h2 id="m-problem">The problem</h2>
+  <div class="part__body"><p>Management needs one trusted view of sales and operations: what changed, how reliable the data is, and what a decision is worth.</p></div>
+</section><section class="part" aria-labelledby="m-role">
+  <h2 id="m-role">My part</h2>
+  <div class="part__body"><p>I set the requirements, KPI definitions and data rules, and approved each phase against its tests. Claude Code wrote the code.</p></div>
+</section><section class="part" aria-labelledby="m-flow">
+  <h2 id="m-flow">How the data moves</h2>
+  <div class="part__wide"><ol class="flow"><li><b>Olist CSV files</b><span>Nine public files, kept out of Git</span></li><li><b>Python ingestion</b><span>Header checks, checksums, one transaction</span></li><li><b>MySQL 8</b><span>Raw, staging, marts and KPI views</span></li><li><b>Python analytics</b><span>KPIs recomputed, forecast, simulator</span></li><li><b>FastAPI and React</b><span>Five dashboard pages and a report</span></li></ol><p class="caption">The architecture as built, from the repository README.</p></div>
+</section><section class="part" aria-labelledby="m-screens">
+  <h2 id="m-screens">The dashboard</h2>
+  <div class="part__wide shots">
+    <div>
+      <figure class="shot shot--tall" data-slot="m-sim" data-kind="product" data-alt="Decision simulator page"><img src="../assets/meridian/simulator.png" width="1360" height="1527" alt="MERIDIAN decision simulator with base, upside and downside scenarios" loading="lazy"></figure>
+      <p class="caption">Decision simulator: scenarios run on stated assumptions.</p>
+    </div>
+    <div>
+      <figure class="shot shot--tall" data-slot="m-dq" data-kind="product" data-alt="Data quality and methods page"><img src="../assets/meridian/data-quality.png" width="1360" height="2285" alt="MERIDIAN data quality page listing load checksums and data-quality checks" loading="lazy"></figure>
+      <p class="caption">Data quality: every load and check on record.</p>
+    </div>
+  </div>
+</section><section class="part" aria-labelledby="m-checks">
+  <h2 id="m-checks">Checks that pass</h2>
+  <div class="part__wide"><dl class="figures">
+  <div><dt>backend tests</dt><dd>112</dd></div>
+  <div><dt>end‑to‑end tests</dt><dd>7</dd></div>
+  <div><dt>load reconciliations matched</dt><dd>28</dd></div>
+  <div><dt>KPI reconciliations matched</dt><dd>8</dd></div>
+</dl><p class="caption">From the project status, 6 November 2026. CI runs on GitHub Actions.</p></div>
+</section><section class="part" aria-labelledby="m-stack">
+  <h2 id="m-stack">Technology</h2>
+  <div class="part__body"><p>Python 3.13, MySQL 8, Pandas, SQL, FastAPI, React with TypeScript, Recharts, Statsmodels, Matplotlib, Pytest, Ruff, Vitest, Playwright, GitHub Actions. Power BI as a model spec with DAX.</p></div>
+</section><section class="part" aria-labelledby="m-limits">
+  <h2 id="m-limits">Limits and next steps</h2>
+  <div class="part__body"><ul><li>Revenue is a proxy: delivered merchandise value, no costs or refunds.</li><li>The forecast did not beat the naive baseline, so the baseline is used.</li><li>Runs locally. Next: the Power BI report, then free hosting.</li></ul></div>
+</section><div class="next"><p>Enterprise FP&amp;A on Anaplan</p><a class="btn" href="enterprise-fpa.html">Next project</a></div>
+</main>
+
+<footer class="mast">
+  <div class="container">
+    <a class="mast__word" href="../index.html" aria-label="Mayank Pugalia, home">Mayank Pugalia</a>
+    <div class="mast__row">
+      <ul class="mast__links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../assets/resume.pdf" download>Resume</a></li>
+        <li><a href="https://github.com/maayank05" rel="me noopener" target="_blank">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/mayankpugalia05" rel="me noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+      <small>© 2026 Mayank Pugalia</small>
+    </div>
+  </div>
+</footer>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+<script src="../js/site.js" defer></script>
+</body>
+</html>
